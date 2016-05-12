@@ -17,7 +17,7 @@ public class Selection {
                 if (less(a[j], a[min]))
                     min = j;
             }
-            printComprable(a);
+            //printComprable(a);
             exch(a, i, min);
 
 

@@ -17,22 +17,39 @@ public class ChapterTwo {
     private static final Logger logger = LoggerFactory.getLogger(ChapterTwo.class);
 
     public static void main(String args[]) {
-        String[] a = {"E","A","S","Y","Q","U","E","S","T","I","O","N"};
+        int l = 10000;
+        String[] a = {"E", "A", "S", "Y", "Q", "U", "E", "S", "T", "I", "O", "N"};
+
+        String[] b = new String[l];
+        for (int i = 0; i < l; i++) {
+            b[i] = "X";
+        }
+
+        Double[] c = new Double[l];
+        for (int i = 0; i < l; i++) {
+            c[i] = (double) l-i;
+        }
+
+        double t1 = time("Insertion", c);
+        double t2 = time("Selection", c);
+        System.out.println("Insertion time=" + t1);
+        System.out.println("Selection time=" + t2);
+
         //Selection.sort(a);
-        Insertion.sort(a);
+        //Insertion.sort(a);
         assert isSorted(a);
         show(a);
 
 
 
-        String alg1 = args[0];
-        String alg2 = args[1];
-        int N = Integer.parseInt(args[2]);
-        int T = Integer.parseInt(args[3]);
+/*        String alg1 = "Insertion";
+        String alg2 = "Selection";
+        int N = Integer.parseInt("1000");//对长度为 N（由第三个参数指定）
+        int T = Integer.parseInt("100");//重复 T 次（由第四个参数指定）
         double t1 = timeRandomInput(alg1, N, T); // 算法1的总时间
         double t2 = timeRandomInput(alg2, N, T); // 算法2的总时间
         StdOut.printf(" For %d random Doubles\n %s is" , N, alg1);
-        StdOut.printf(" %.1f times faster than %s\n" , t2/t1, alg2);
+        StdOut.printf(" %.1f times faster than %s\n" , t2/t1, alg2);*/
 
     }
 
