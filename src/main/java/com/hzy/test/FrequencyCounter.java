@@ -11,14 +11,15 @@ import com.hzy.util.StdOut;
 public class FrequencyCounter {
     public static void main(String[] args)
     {
-        int minlen = Integer.parseInt(args[0]); // 最小键长
+        int minlen = Integer.parseInt("2"); // 最小键长
         ST<String, Integer> st = new ST<String, Integer>();
-        while (!StdIn.isEmpty())
+
+        for (int i =0;i<args.length;i++)
         { // 构造符号表并统计频率
-            String word = StdIn.readString();
+            String word = args[i];
             if (word.length() < minlen) continue; // 忽略较短的单词
             if (!st.contains(word)) st.put(word, 1);
-            else st.put(word, st.get(word) + 1);
+            else st.put(word, st.get(word) + 1);  
         }
         // 找出出现频率最高的单词
         String max = " ";
